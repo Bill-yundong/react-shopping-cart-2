@@ -9,13 +9,13 @@ Object {
         class="CartProduct__Container-sc-11uohgb-0 iFEDVZ"
       >
         <button
-          class="CartProduct__DeleteButton-sc-11uohgb-5 fZpMUH"
+          class="CartProduct__DeleteButton-sc-11uohgb-5 fPSrmw"
           title="remove product from cart"
         />
         <img
           alt="Cropped Stay Groovy off white"
           class="CartProduct__Image-sc-11uohgb-7 dSflEM"
-          src="8552515751438644-1-cart.webp"
+          src="/products/8552515751438644-1-cart.webp"
         />
         <div
           class="CartProduct__Details-sc-11uohgb-1 dWfwVY"
@@ -63,13 +63,13 @@ Object {
       class="CartProduct__Container-sc-11uohgb-0 iFEDVZ"
     >
       <button
-        class="CartProduct__DeleteButton-sc-11uohgb-5 fZpMUH"
+        class="CartProduct__DeleteButton-sc-11uohgb-5 fPSrmw"
         title="remove product from cart"
       />
       <img
         alt="Cropped Stay Groovy off white"
         class="CartProduct__Image-sc-11uohgb-7 dSflEM"
-        src="8552515751438644-1-cart.webp"
+        src="/products/8552515751438644-1-cart.webp"
       />
       <div
         class="CartProduct__Details-sc-11uohgb-1 dWfwVY"

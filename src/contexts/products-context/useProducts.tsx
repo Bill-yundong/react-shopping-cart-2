@@ -16,32 +16,41 @@ const useProducts = () => {
 
   const fetchProducts = useCallback(() => {
     setIsFetching(true);
-    getProducts().then((products: IProduct[]) => {
-      setIsFetching(false);
-      setProducts(products);
-    });
+    getProducts()
+      .then((products: IProduct[]) => {
+        setIsFetching(false);
+        setProducts(products);
+      })
+      .catch(() => {
+        setIsFetching(false);
+        setProducts([]);
+      });
   }, [setIsFetching, setProducts]);
 
   const filterProducts = (filters: string[]) => {
     setIsFetching(true);
 
-    getProducts().then((products: IProduct[]) => {
-      setIsFetching(false);
-      let filteredProducts;
+    getProducts()
+      .then((products: IProduct[]) => {
+        setIsFetching(false);
+        let filteredProducts;
 
-      if (filters && filters.length > 0) {
-        filteredProducts = products.filter((p: IProduct) =>
-          filters.find((filter: string) =>
-            p.availableSizes.find((size: string) => size === filter)
-          )
-        );
-      } else {
-        filteredProducts = products;
-      }
+        if (filters && filters.length > 0) {
+          filteredProducts = products.filter((p: IProduct) =>
+            filters.find((filter: string) =>
+              p.availableSizes.find((size: string) => size === filter)
+            )
+          );
+        } else {
+          filteredProducts = products;
+        }
 
-      setFilters(filters);
-      setProducts(filteredProducts);
-    });
+        setFilters(filters);
+        setProducts(filteredProducts);
+      })
+      .catch(() => {
+        setIsFetching(false);
+      });
   };
 
   return {
