@@ -1,12 +1,10 @@
-import axios from 'axios';
-import { IGetProductsResponse } from 'models';
+import { IProduct } from 'models';
+import productsData from '../static/json/products.json';
 
-const isProduction = process.env.NODE_ENV === 'production';
-
-export const getProducts = async () => {
-  return new Promise((_, reject) => {
+export const getProducts = (): Promise<IProduct[]> => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      reject(new Error('Failed to load product data'));
+      resolve(productsData.data.products as IProduct[]);
     }, 1000);
-  }) as Promise<any>;
+  });
 };

@@ -26,14 +26,18 @@ const CartProduct = ({ product }: IProps) => {
   const handleIncreaseProductQuantity = () => increaseProductQuantity(product);
   const handleDecreaseProductQuantity = () => decreaseProductQuantity(product);
 
+  const imageSrc = process.env.PUBLIC_URL + `/products/${sku}-1-cart.webp`;
+  const deleteIconUrl = process.env.PUBLIC_URL + '/delete-icon.png';
+
   return (
     <S.Container>
       <S.DeleteButton
         onClick={handleRemoveProduct}
         title="remove product from cart"
+        deleteIconUrl={deleteIconUrl}
       />
       <S.Image
-        src={require(`static/products/${sku}-1-cart.webp`)}
+        src={imageSrc}
         alt={title}
       />
       <S.Details>

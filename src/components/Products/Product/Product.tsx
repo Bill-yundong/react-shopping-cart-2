@@ -23,6 +23,9 @@ const Product = ({ product }: IProps) => {
     isFreeShipping,
   } = product;
 
+  const imageUrl = process.env.PUBLIC_URL + `/products/${sku}-1-product.webp`;
+  const hoverImageUrl = process.env.PUBLIC_URL + `/products/${sku}-2-product.webp`;
+
   const formattedPrice = formatPrice(price, currencyId);
   let productInstallment;
 
@@ -53,9 +56,9 @@ const Product = ({ product }: IProps) => {
   };
 
   return (
-    <S.Container onKeyUp={handleAddProductWhenEnter} sku={sku} tabIndex={1}>
+    <S.Container onKeyUp={handleAddProductWhenEnter} tabIndex={1}>
       {isFreeShipping && <S.Stopper>Free shipping</S.Stopper>}
-      <S.Image alt={title} />
+      <S.Image alt={title} imageUrl={imageUrl} hoverImageUrl={hoverImageUrl} />
       <S.Title>{title}</S.Title>
       <S.Price>
         <S.Val>

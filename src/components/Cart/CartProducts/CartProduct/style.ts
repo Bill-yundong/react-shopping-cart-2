@@ -42,7 +42,10 @@ export const Price = styled.div`
   width: 25%;
 `;
 
-export const DeleteButton = styled.button`
+interface IDeleteButton {
+  deleteIconUrl: string;
+}
+export const DeleteButton = styled.button<IDeleteButton>`
   width: 16px;
   height: 16px;
   top: 15px;
@@ -50,7 +53,7 @@ export const DeleteButton = styled.button`
   border-radius: 50%;
   position: absolute;
   background-size: auto 100%;
-  background-image: url(${require('static/delete-icon.png')});
+  background-image: ${({ deleteIconUrl }) => `url(${deleteIconUrl})`};
   background-repeat: no-repeat;
   z-index: 2;
   cursor: pointer;
