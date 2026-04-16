@@ -8,10 +8,6 @@ interface IProps {
 }
 
 const Products = ({ products }: IProps) => {
-  if (products?.length > 0) {
-    throw new Error('Product list rendering failed');
-  }
-  
   return (
     <S.Container>
       {products?.map((p) => (
